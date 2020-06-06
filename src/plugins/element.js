@@ -8,7 +8,8 @@ import { Menu,Submenu,MenuItem,Breadcrumb,BreadcrumbItem,Card,
     Switch,
     Tooltip,
     Pagination,
-    Dialog
+    Dialog,
+    MessageBox
 } from 'element-ui'
 
 Vue.use(Dialog)
@@ -36,3 +37,4 @@ Vue.use(MenuItem)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm

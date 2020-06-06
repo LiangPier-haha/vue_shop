@@ -35,7 +35,7 @@
 							<el-button type="success" icon="el-icon-check" circle></el-button>
 						</el-tooltip>
 						<el-tooltip effect="dark" content="删除" placement="top" transition="in">
-							<el-button type="danger" icon="el-icon-delete" circle></el-button>
+							<el-button type="danger" icon="el-icon-delete" circle @click="delUser(scope.row.id)"></el-button>
 						</el-tooltip>
 					</template>
 				</el-table-column>
@@ -230,6 +230,20 @@
 					this.editUserVisible = false
                     this.getUserList()
 				})
+			},
+            async delUser(id) {
+                const confirm = await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).catch(error => error)
+				if (confirm === "cancel") return this.$message.info("取消删除用户")
+				const {data:res} = await this.$http.delete('users/'+id)
+				if (res.meta.status !== 200) {
+				    return this.$message.error("删除用户失败")
+				}
+				this.$message.success("删除用户成功")
+				this.getUserList()
 			}
 		}
     }
