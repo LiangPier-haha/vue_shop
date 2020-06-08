@@ -14,7 +14,7 @@
 				</el-col>
 				<el-button type="primary" @click="addDialogVisible = true">添加用户</el-button>
 			</el-row>
-			<el-table :data="userList" style="width: 100%" align="center">
+			<el-table :data="userList" style="width: 100%">
 				<el-table-column align="center" type="index" label="#"></el-table-column>
 				<el-table-column align="center" prop="username" label="姓名" ></el-table-column>
 				<el-table-column align="center" prop="create_time" label="日期" ></el-table-column>
