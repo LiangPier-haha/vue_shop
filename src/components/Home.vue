@@ -10,9 +10,9 @@
 		</el-header>
 		<el-container>
 			<!--侧边栏-->
-			<el-aside :width="isCollapse ? '56' : '200'">
+			<el-aside :width="isCollapse ? '56px' : '200px'">
 				<div class="btncollapse" @click="collapseContal">|||</div>
-				<el-menu background-color="#545c64" text-color="#fff" active-text-color="#409eff" :collapse="isCollapse" :collapse-transition="false" router :default-active="activeMenu">
+				<el-menu background-color="#545c64" text-color="#fff" active-text-color="#409eff" :collapse="isCollapse" :collapse-transition="false" router :default-active="activeMenu" :unique-opened="true">
 					<el-submenu :index="item.id + ''" v-for="item in menusList" :key="item.id">
 						<template slot="title">
 							<i :class="icons[item.id]"></i>
@@ -73,7 +73,6 @@
 			},
 			async getMenuList() {
                 const {data:res} = await this.$http.get('menus')
-				console.log(res)
 				this.menusList = res.data
 			},
             collapseContal() {
@@ -119,7 +118,7 @@
 			border-right: 0;
 		}
 		.btncollapse {
-			background-color: #bbb;
+			background-color: #373d41;
 			text-align: center;
 			letter-spacing: 3px;
 			cursor: pointer;

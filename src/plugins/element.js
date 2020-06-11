@@ -10,9 +10,33 @@ import { Menu,Submenu,MenuItem,Breadcrumb,BreadcrumbItem,Card,
     Pagination,
     Dialog,
     MessageBox,
-    Tag
+    Tag,
+    Tree,
+    Select,
+    Option,
+    Cascader,
+    Alert,
+    Tabs,
+    TabPane,
+    Step,
+    Steps,
+    Checkbox,
+    CheckboxGroup,
+    Upload
 } from 'element-ui'
 
+Vue.use(Upload)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Step)
+Vue.use(Steps)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Alert)
+Vue.use(Cascader)
+Vue.use(Option)
+Vue.use(Select)
+Vue.use(Tree)
 Vue.use(Tag)
 Vue.use(Dialog)
 Vue.use(Pagination)

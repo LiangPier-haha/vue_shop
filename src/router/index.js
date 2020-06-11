@@ -6,7 +6,10 @@ import Welcome from '../components/Welcome'
 import Users from '../components/users/Users'
 import Rights from '../components/porwer/Rights'
 import Roles from '../components/porwer/Roles'
-
+import Cate from '../components/goods/Cate'
+import CateParams from '../components/goods/CateParams'
+import Goods from '../components/goods/Goods'
+import AddGood from '../components/goods/AddGood'
 
 Vue.use(VueRouter)
 
@@ -39,7 +42,24 @@ Vue.use(VueRouter)
         {
           path: '/roles',
           component: Roles
+        },
+        {
+          path: '/categories',
+          component: Cate
+        },
+        {
+          path: '/params',
+          component: CateParams
+        },
+        {
+          path: '/goods',
+          component: Goods
+        },
+        {
+          path: '/goods/addgood',
+          component: AddGood
         }
+
       ]
     }
   ]

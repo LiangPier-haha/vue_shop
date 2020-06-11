@@ -51,6 +51,7 @@
             login() {
                 this.$refs.loginFormRef.validate( async (value) => {
                     if (!value) return
+					console.log(this.$http)
 					const { data: res } = await this.$http.post("/login",this.form)
 					if (res.meta.status===200) {
                         window.sessionStorage.setItem("token",res.data.token)
